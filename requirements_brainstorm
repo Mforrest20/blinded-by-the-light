@@ -12,10 +12,11 @@ System Requirements
 •	The system time should be accurate to within 10 minutes 
 •	The ABO shall use an alarm library for triggering open and close events
 •	The ABO shall use a stepper library for controlling direction and amount of rotation
-•	At 0000 the ABO should calculate dusk/dawn times set the events accordingly
+•	If an open or close event occurs store the current position of the stepper in flash memory
+•	At 0000 the ABO should calculate dusk/dawn times set the triggers accordingly
+•	If the system experiences a power loss load last stepper position from flash memory
 •	A watchdog shall ensure the blinds are not over rotated either direction
-•	If the system experiences a power cycle it should make assumptions to attempt recovery
-•	If an error occurs it will activate backlight and be displayed on the screen.
+•	If an error occurs activate LCD backlight and display error on screen.
 
 ICEBOX
 -Encoder for manually controlling the blinds
