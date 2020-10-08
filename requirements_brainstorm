@@ -1,0 +1,58 @@
+Blind Opener Project
+
+User Requirements:
+•	Automatically open the blinds 40 minutes before dawn
+•	Automatically close the blinds 1 hour after dusk
+•	System should function after losing power
+•	Any problems with the system should alert the user
+
+System Requirements
+•	The ABO shall calculate sunrise and sunset times each day
+•	The ABO should connect to NTP server once per hour to update time
+•	The system time should be accurate to within 10 minutes 
+•	The ABO shall use an alarm library for triggering open and close events
+•	The ABO shall use a stepper library for controlling direction and amount of rotation
+•	At 0000 the ABO should calculate dusk/dawn times set the events accordingly
+•	A watchdog shall ensure the blinds are not over rotated either direction
+•	If the system experiences a power cycle it should make assumptions to attempt recovery
+•	If an error occurs it will activate backlight and be displayed on the screen.
+
+ICEBOX
+-Encoder for manually controlling the blinds
+-Current sensor for detecting fully closed/open
+-RTC
+-Ability to set open time remotely
+
+IDEA STUFF
+
+•	Output test values on screen
+•	Current Day
+•	Current Time
+•	Sunrise Time
+•	Open Time (sunset time minus 40mins)
+•	Sunset Time 
+•	Close time (sunset time plus 1hr)
+
+12.5 * 360 degrees of rotations. VERY TIGHT Recommend -0.25 on either side. ~12*360 degrees 
+Set sunrise and suset to 0
+Use alarm to set sunrise and sunset time to 0.
+	Check if SR/SS time is 0. If so calculate it.
+	Set alarm for sunset and sunrise. When alarm do open/close function
+Check if past 1 am and set
+Get time
+Use Time library:
+Keep track opf
+
+
+ 
+
+If encoder knob is turned start a timer
+If another click detected. reset this timer.
+After timer runs out do blind action (change blind to desired  
+Show number in front of Blinds uI (0-100) 0 is flully open, 100 is fully closed
+	Redraw blinds ui each before the number in front of it
+
+Move cursor to position 7(8)
+Set font size 
+Print Value
+Return font size
